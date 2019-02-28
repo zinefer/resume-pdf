@@ -3,6 +3,9 @@ html(lang="en")
   head
     title= pageTitle
     script(src='/reload/reload.js')
+    style
+      include:clean-css ../node_modules/normalize.css/normalize.css
+    link(href='/main.css' rel='stylesheet')
   body
     h1 Pug - node template engine
     #container.col
