@@ -1,7 +1,9 @@
-var path     = require('path'),
-    express  = require('express'),
-    chokidar = require('chokidar'),
-    reload   = require('reload');
+const path     = require('path'),
+      express  = require('express'),
+      chokidar = require('chokidar'),
+      reload   = require('reload');
+
+const dataSrc = './src/data.js';
 
 var watcher = chokidar.watch('src');
 
@@ -14,13 +16,13 @@ var reloadServer = reload(app);
 watcher.on('ready', () => {
   watcher.on('all', (id, path) => {
     console.log(`Change detected in ${path}`);
-    delete require.cache[require.resolve('./data.js')]
+    delete require.cache[require.resolve(dataSrc)]
     reloadServer.reload();
   });
 });
 
 app.use((req, res, next) => {
-  var data = require('./data.js');
+  var data = require(dataSrc);
   data.preview = true;
   res.render('index', data);
 });

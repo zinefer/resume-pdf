@@ -6,7 +6,7 @@ const pug = require('pug'),
 
 const isWsl = require('is-wsl');
 
-var data = require('./data.js');
+var data = require('./src/data.js');
 var html = pug.renderFile('src/index.pug', data);
 
 fs.writeFile('dist/index.html', html, function(err) {
