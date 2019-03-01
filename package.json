@@ -17,6 +17,7 @@
     "command-exists": "^1.2.8",
     "express": "^4.16.4",
     "is-wsl": "^1.1.0",
+    "js-yaml": "^3.12.2",
     "jstransformer-clean-css": "^2.1.0",
     "jstransformer-sass": "^1.0.0",
     "normalize.css": "^8.0.1",

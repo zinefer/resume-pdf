@@ -14,12 +14,15 @@ var reloadServer = reload(app);
 watcher.on('ready', () => {
   watcher.on('all', (id, path) => {
     console.log(`Change detected in ${path}`);
+    delete require.cache[require.resolve('./data.js')]
     reloadServer.reload();
   });
 });
 
 app.use((req, res, next) => {
-   res.render('index', { preview: true })
+  var data = require('./data.js');
+  data.preview = true;
+  res.render('index', data);
 });
 
 app.listen(8080);
