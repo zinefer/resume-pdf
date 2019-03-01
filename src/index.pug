@@ -22,7 +22,7 @@ html(lang="en")
           tr
             each _, type in Skills
               td= (Skills[type][row]) ? Skills[type][row].join(', ') : ''
-      h2 Professional Experience (n Years)
+      h2 Professional Experience (#{YearsExperience} Years)
       each job in Experience
         table
           tr
