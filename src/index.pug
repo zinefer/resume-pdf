@@ -13,26 +13,20 @@ html(lang="en")
       h3 Full Stack Web Developer & Drone Pilot
       h3 248-818-1092 ♠ kiefer.james@gmail.com
       h2 Technical Proficiencies
-      table
+      table.skills
         tr
           th Professional
           th Proficient
           th Familiar
-        tr
-          td Hello
-          td Sepp
-          td Hay
-        tr
-          td Hello
-          td Sepp
-          td Hay
-        tr
-          td Hello
-          td Sepp
-          td Hay
-        tr
-          td Hello
-          td Sepp
-          td Hay
+        each _, row in Array(SkillsMaxLength)
+          tr
+            each _, type in Skills
+              td= (Skills[type][row]) ? Skills[type][row].join(', ') : ''
       h2 Professional Experience (n Years)
-      p Test
+      each job in Experience
+        table
+          tr
+            td
+              h4 #{job.Name} – #{job.Place}
+            td.right
+              h4 #{job.HireDate} – #{job.LeaveDate}
