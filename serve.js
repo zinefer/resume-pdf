@@ -1,8 +1,7 @@
 var path     = require('path'),
     express  = require('express'),
     chokidar = require('chokidar'),
-    reload   = require('reload'),
-    sass     = require('node-sass-middleware');
+    reload   = require('reload');
 
 var watcher = chokidar.watch('src');
 
@@ -19,18 +18,8 @@ watcher.on('ready', () => {
   });
 });
 
-app.use(
-  sass({
-    src: path.join(__dirname, 'src/sass'),
-    dest: path.join(__dirname, 'dist'),
-    debug: true,
-  })
-);
-
-app.use(express.static(path.join(__dirname, 'dist')));
-
 app.use((req, res, next) => {
-   res.render('index', { title: 'Hey', message: 'Hello there!' })
+   res.render('index', { preview: true })
 });
 
 app.listen(8080);

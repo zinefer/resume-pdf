@@ -5,19 +5,23 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "node serve.js"
+    "serve": "node serve.js",
+    "build": "node build.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "chokidar": "^2.1.2",
+    "chrome-headless-render-pdf": "^1.8.2",
+    "command-exists": "^1.2.8",
     "express": "^4.16.4",
+    "is-wsl": "^1.1.0",
     "jstransformer-clean-css": "^2.1.0",
-    "node-sass": "^4.11.0",
-    "node-sass-middleware": "^0.11.0",
+    "jstransformer-sass": "^1.0.0",
     "normalize.css": "^8.0.1",
     "pug": "^2.0.3",
-    "reload": "^2.4.0"
+    "reload": "^2.4.0",
+    "wkhtmltopdf": "^0.3.4"
   }
 }

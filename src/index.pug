@@ -1,18 +1,20 @@
 doctype html
 html(lang="en")
   head
-    title= pageTitle
+    title Resume Preview
     script(src='/reload/reload.js')
-    style
-      include:clean-css ../node_modules/normalize.css/normalize.css
-    link(href='/main.css' rel='stylesheet')
+    style: include:clean-css ../node_modules/normalize.css/normalize.css
+    if preview
+      style: include:sass sass/a4-page.scss
+    style: include:sass sass/main.scss
   body
-    h1 Pug - node template engine
-    #container.col
-      if youAreUsingPug
-        p You are amazing
-      else
-        p Get on it!
-      p.
-        Pug is a terse and simple templating language with a
-        strong focus on performance and powerful features. Yay
+    page
+      h1 Pug - node template engine
+      #container.col
+        if youAreUsingPug
+          p You are amazing
+        else
+          p Get on it!
+        p.
+          Pug is a terse and simple templating language with a
+          strong focus on performance and powerful features. Yay

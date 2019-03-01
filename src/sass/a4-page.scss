@@ -1,0 +1,18 @@
+body {
+  background: rgb(82, 86, 89);
+}
+page {
+  background: white;
+  display: block;
+  margin: 60px auto;
+  margin-bottom: 0.5cm;
+  box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+
+  /* A4 size */
+  width: 8.5in;
+  height: 11in;
+
+  /* Hack - For some reason this causes our rendering div to respect the
+            same margins as the chrome-pdf-renderer for first-child elements */
+  padding-top: 0.1px;
+}
