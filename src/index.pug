@@ -1,3 +1,11 @@
+mixin listAchievements(list, first=true)
+  if Array.isArray(list)
+    ul(class=(first ? 'flex' : '' ) )
+      each more in list
+        +listAchievements(more, false)
+  else
+    li !{list}
+
 doctype html
 html(lang="en")
   head
@@ -30,3 +38,7 @@ html(lang="en")
               h4 #{job.Name} – #{job.Place}
             td.right
               h4 #{job.HireDate} – #{job.LeaveDate}
+        h5= job.Position
+        p= job.Description
+        if job.Achievements
+          +listAchievements(job.Achievements)
