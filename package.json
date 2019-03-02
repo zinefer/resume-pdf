@@ -22,7 +22,6 @@
     "jstransformer-sass": "^1.0.0",
     "normalize.css": "^8.0.1",
     "pug": "^2.0.3",
-    "reload": "^2.4.0",
-    "wkhtmltopdf": "^0.3.4"
+    "reload": "^2.4.0"
   }
 }
