@@ -32,13 +32,14 @@ html(lang="en")
               td= (Skills[type][row]) ? Skills[type][row].join(', ') : ''
       h2 Professional Experience (#{YearsExperience} Years)
       each job in Experience
-        table
-          tr
-            td
-              h4 #{job.Name} – #{job.Place}
-            td.right
-              h4 #{job.HireDate} – #{job.LeaveDate}
-        h5= job.Position
-        p= job.Description
-        if job.Achievements
-          +listAchievements(job.Achievements)
+        div(class=job.Name.split(' ')[0].toLowerCase())
+          table
+            tr
+              td
+                h4 #{job.Name} – #{job.Place}
+              td.right
+                h4 #{job.HireDate} – #{job.LeaveDate}
+          h5= job.Position
+          p= job.Description
+          if job.Achievements
+            +listAchievements(job.Achievements)

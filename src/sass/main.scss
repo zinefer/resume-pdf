@@ -81,15 +81,12 @@ ul {
   padding-left: 1em;
 }
 
-
-
 ul.flex {
-  -moz-column-count: 3;
-  -moz-column-gap: 0;
-  -webkit-column-count: 3;
-  -webkit-column-gap: 0;
-  column-count: 3;
-  column-gap: 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  height: 60pt;
 
   margin:0;
   padding-left:2px;
@@ -100,9 +97,26 @@ li {
   margin-left: 1em;
 }
 
-
 /* Utilities */
-
 .right {
   text-align: right;
+}
+
+/* ---- */
+
+.pinecone ul.flex {
+  height: 60pt;
+  max-width:280px;
+  margin-bottom: 8pt;
+}
+
+.descartes ul.flex {
+  height: 50pt;
+  margin-bottom: 8pt;
+}
+
+.sparkfun ul.flex {
+  height: 160pt;
+  max-width:260px;
+  margin-bottom: 8pt;
 }
