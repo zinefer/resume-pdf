@@ -17,4 +17,8 @@ page {
   /* Match chrome print to pdf margins */
   width: calc(8.5in - 2cm);
   padding: 0.5cm 1cm;
+
+
+  /* Height hackfix */
+  height: 1015px;
 }
