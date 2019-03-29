@@ -11,6 +11,8 @@ var app = express()
             .set('view engine', 'pug')
             .set('views', 'src');
 
+app.use(express.static('static'));
+
 var reloadServer = reload(app);
 
 watcher.on('ready', () => {

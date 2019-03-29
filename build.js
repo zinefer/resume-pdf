@@ -9,16 +9,21 @@ const isWsl = require('is-wsl');
 var data = require('./src/data.js');
 var html = pug.renderFile('src/index.pug', data);
 
-fs.writeFile('dist/index.html', html, function(err) {
+fs.copyFile('static/logo.svg', 'dist/logo.svg', (err) => {
   if (err) return console.log(err);
 
-  var pathToHtml = path.join(__dirname, 'dist/index.html'),
-      pdfOptions = { noMargins: true };
+  fs.writeFile('dist/index.html', html, function(err) {
+    if (err) return console.log(err);
 
-  if (isWsl) {
-    pdfOptions.chromeBinary = 'chrome.exe';
-    pathToHtml = pathToHtml.replace('/mnt/c/', 'C://');
-  }
+    var pathToHtml = path.join(__dirname, 'dist/index.html'),
+        pdfOptions = { noMargins: true };
 
-  pdf.generateSinglePdf(pathToHtml, 'dist/resume.pdf', pdfOptions);
+    if (isWsl) {
+      pdfOptions.chromeBinary = 'chrome.exe';
+      pathToHtml = pathToHtml.replace('/mnt/c/', 'C://');
+    }
+
+    pdf.generateSinglePdf(pathToHtml, 'dist/resume.pdf', pdfOptions);
+  });
+
 });
