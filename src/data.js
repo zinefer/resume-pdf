@@ -1,6 +1,8 @@
 const fs   = require('fs'),
       yaml = require('js-yaml');
 
+var merge = require('deepmerge');
+
 var data = yaml.safeLoad(fs.readFileSync('src/credentials.yml', 'utf8'));
 
 // Calculate the longest list to assist the layout
@@ -15,4 +17,7 @@ var firstJob  = data.Experience.length-1,
     years     = Math.abs(new Date(workingMS).getUTCFullYear() - 1970);
 data.YearsExperience = years
 
-module.exports = data;
+// Handle cli arguments
+const argv = require('yargs').argv
+
+module.exports = merge(data, argv);
