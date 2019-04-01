@@ -18,7 +18,7 @@
     "deepmerge": "^3.2.0",
     "express": "^4.16.4",
     "is-wsl": "^1.1.0",
-    "js-yaml": "^3.12.2",
+    "js-yaml": "^3.13.0",
     "jstransformer-clean-css": "^2.1.0",
     "jstransformer-sass": "^1.0.0",
     "normalize.css": "^8.0.1",
